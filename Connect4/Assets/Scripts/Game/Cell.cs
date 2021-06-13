@@ -9,18 +9,25 @@ namespace Connect4.Game
         [SerializeField] private int _id;
         [SerializeField] private CellType _state;
 
+        private Image _image;
+
         public CellType State
         {
             get => _state;
             set => _state = value;
         }
-        public Image Image {get; private set;}
         public int Id {get => _id;}
 
 
         private void Awake()
         {
-            Image = GetComponent<Image>();
+            _image = GetComponent<Image>();
+        }
+
+
+        public void SetColor(Color color)
+        {
+            _image.color = color;
         }
     }
 }

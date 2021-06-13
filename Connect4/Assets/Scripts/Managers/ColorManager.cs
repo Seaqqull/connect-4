@@ -9,6 +9,7 @@ namespace Connect4.Managers
         [SerializeField] private Color _predictionColor;
         [SerializeField] private Color _firstPlayerColor;
         [SerializeField] private Color _secondPlayerColor;
+        [SerializeField] private Color _winSequenceColor;
 
         public Color SecondPlayerColor
         {
@@ -17,6 +18,10 @@ namespace Connect4.Managers
         public Color FirstPlayerColor
         {
             get => _firstPlayerColor;
+        }
+        public Color WinSequenceColor
+        {
+            get => _winSequenceColor;
         }
         public Color PredictionColor
         {
