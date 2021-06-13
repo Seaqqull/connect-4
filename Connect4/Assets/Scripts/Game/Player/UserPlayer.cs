@@ -9,7 +9,7 @@ namespace Connect4.Game.Players
         {
             base.BeginTurn();
 
-            RoundManager.Instance.MarkAsSelected(-1, _selectedColumn);
+            RoundManager.Instance.MarkAsSelected(_selectedColumn);
         }
 
 

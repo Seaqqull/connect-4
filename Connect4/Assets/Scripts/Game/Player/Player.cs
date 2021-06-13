@@ -38,7 +38,9 @@ namespace Connect4.Game.Players
                 throw new ArgumentOutOfRangeException("Wrong column index");
 
             var columnSelectable = RoundManager.Instance.IsColumnSelectable(column);
-            RoundManager.Instance.MarkAsSelected(_selectedColumn,  columnSelectable? column : -1);
+            RoundManager.Instance.MarkAsRegular(_selectedColumn);
+            if(columnSelectable)
+                RoundManager.Instance.MarkAsSelected(column);
 
             _selectedColumn = column;
             return columnSelectable;
@@ -49,7 +51,7 @@ namespace Connect4.Game.Players
             if(_selectedColumn != column)
                 return false;
 
-            RoundManager.Instance.MarkAsSelected(column, -1);
+            RoundManager.Instance.MarkAsRegular(column);
             _selectedColumn = -1;
             return true;
         }

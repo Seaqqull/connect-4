@@ -319,19 +319,25 @@ namespace Connect4.Managers
             return !(filledCount == _cells[column].Count);
         }
 
-        public void MarkAsSelected(int oldColumn, int newColumn)
-        {
-            if(oldColumn != -1)
-            {
-                var oldCell = GetFreeCell(oldColumn);
-                oldCell?.SetColor(ColorManager.Instance.EmptyColor);
-            }
 
-            if(newColumn != -1)
-            {
-                var newCell = GetFreeCell(newColumn);
-                newCell?.SetColor(ColorManager.Instance.PredictionColor);
-            }
+        public void MarkAsRegular(int column)
+        {
+            if(column == -1)
+                return;
+
+
+            var cell = GetFreeCell(column);
+            cell?.SetColor(ColorManager.Instance.EmptyColor);
+        }
+
+        public void MarkAsSelected(int column)
+        {
+            if(column == -1)
+                return;
+
+
+            var cell = GetFreeCell(column);
+            cell?.SetColor(ColorManager.Instance.PredictionColor);
         }
     }
 }
