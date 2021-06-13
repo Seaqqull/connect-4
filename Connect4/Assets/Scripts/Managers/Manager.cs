@@ -8,7 +8,7 @@ namespace Connect4.Managers
         public static T Instance {get; private set;}
 
 
-        protected virtual void Start()
+        protected virtual void Awake()
         {
             if(Instance != null)
             {
